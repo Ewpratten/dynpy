@@ -14,6 +14,7 @@ class ChatMessage(object):
     timestamp: time.struct_time
 
 class PlayerStatus(object):
+    """A player's status"""
     name: str
     position: np.array
     health: float
@@ -65,7 +66,6 @@ class Dynmap(object):
             "name": player,
             "message": message
         }).json()
-        print(res)
         return res["error"] == "none"
 
     def update(self, world: str = None):
